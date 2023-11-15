@@ -20,6 +20,8 @@ Category.init(
     },
   
   },
+
+  
   {
     sequelize,
     timestamps: false,
