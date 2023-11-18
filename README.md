@@ -17,9 +17,9 @@ With the Insomnia app we will be able to interact with the database using the fo
 
 * GET All, GET One by id, POST (CREATE), PUT (UPDATE), DELETE 
 
-## Video Preview 
+## Preview 
 
-Video walk-through of installation and using Insomnia to interact with the database.
+[Video walk-through](https://www.youtube.com/watch?v=nFlpNTj0yRE) of installation and using Insomnia to interact with the database.
 
 
 
