@@ -1,5 +1,5 @@
 // import important parts of sequelize library
-const { Model, DataTypes } = require("sequelize");
+const { Model, DataTypes } = require('sequelize');
 // import our database connection from config.js
 const sequelize = require('../config/connection');
 
@@ -16,7 +16,7 @@ Product.init(
       autoIncrement: true,
     },
     product_name: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
 
     },
@@ -31,7 +31,7 @@ Product.init(
     stock: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 10, 
+      defaultValue: 10,
       validate: {
         isNumeric: true,
       }
@@ -39,39 +39,20 @@ Product.init(
     category_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: "category",
-        key: "id",
+        model: 'category',
+        key: 'id',
         unique: false,
       },
     },
+  },
+  {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "product",
+    modelName: 'product',
   }
 );
 
 module.exports = Product;
 
-// * `Product`
-//   * `id`
-//   * Integer.
-//     * Doesn't allow null values.
-//   * Set as primary key.
-//     * Uses auto increment.
-//   * `product_name`
-//   * String.
-//     * Doesn't allow null values.
-//   * `price`
-//   * Decimal.
-//     * Doesn't allow null values.
-//   * Validates that the value is a decimal.
-//   * `stock`
-//     * Integer.
-//     * Doesn't allow null values.
-//   * Set adfault value of`10`
-//     * Validates that the value is numeric.
-//   * `category_id`
-//   * Integer.
-//     * References the `Category` model's `id`.
